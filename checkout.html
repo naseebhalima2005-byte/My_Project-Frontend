@@ -1,0 +1,525 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout Shipping Address</title>
+
+<style>
+html,body{
+  width:100%;
+  height:100%;
+  overflow-x: hidden;
+} 
+body{
+font-family:Arial;
+margin:0;
+background:#f5f5f5;
+}
+
+
+
+.top-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 50px;
+border-bottom:1px solid #ddd;
+background:#f6f6f6;
+}
+
+.progress-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+width:60%;
+position:relative;
+right:18%;
+color:#6b1d1d;
+}
+
+.step{text-align:center;}
+
+.circle{
+width:30px;
+height:30px;
+border-radius:50%;
+border:2px solid #ccc;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#6b1d1d;
+color:white;
+}
+
+.line{
+height:2px;
+width:80px;
+background:#6b1d1d;
+}
+
+
+
+.container{
+display:flex;
+justify-content:space-between;
+padding:40px 80px;
+ flex-wrap:wrap;
+}
+
+
+
+.form-section{
+width:60%;
+}
+
+.form-section input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:5px;
+ max-width:100%;
+}
+
+.name-row{
+display:flex;
+gap:10px;
+}
+
+.name-row input{
+width:50%;
+}
+
+
+
+#saveBtn{
+  padding:15px;
+  width:100%;
+  background:#6b1d1d;
+  color:white;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+
+  position: static;   
+  margin-top:15px;
+}
+
+
+.cart-summary{
+  width:100%;
+  max-width:100%;
+  overflow:hidden;  
+}
+.product div{
+  word-wrap:break-word;
+}
+.product{
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.product img{
+width:60px;
+height:80px;
+object-fit:cover;
+}
+
+.price-row{
+display:flex;
+justify-content:space-between;
+margin:8px 0;
+}
+
+.total{
+font-weight:bold;
+}
+.footer{
+  background:#eee5e0;
+  padding:25px 20px;
+  border-top:1px solid #ddd;
+
+  position: relative;
+  margin-top:40px;
+}
+
+
+.logo-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.logo-container img{
+  height:40px;
+  object-fit:contain;
+}
+
+
+.need{
+  text-align:center;
+  margin-top:15px;
+  font-weight:bold;
+  color:#424145;
+}
+
+
+.whatsapp{
+  position:absolute;
+  right:20px;
+  bottom:20px;
+}
+
+.whatsapp img{
+  width:45px;
+  cursor:pointer;
+}
+
+ @media screen and (max-width: 768px) {
+
+.top-header{
+flex-direction:column;
+gap:15px;
+padding:15px;
+}
+
+
+
+.progress-container{
+width:100%;
+position:static;
+justify-content:center;
+}
+
+  .container{
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .form-section, .cart-summary{
+    width: 100%;
+    margin-left: 0;
+  }
+.name-row{
+  flex-direction:column;   
+}
+
+  .name-row input{
+    width: 100%;
+    
+  }
+
+  .form-section{
+    position: relative;
+  }
+
+  #saveBtn{
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+    
+  }
+
+  .progress-container{
+    width: 100%;
+    right: 0;
+    gap: 5px;
+  }
+
+  .circle{
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+
+ 
+
+  .footer{
+    padding:20px 15px;
+    text-align:center;
+  }
+
+  .logo-container{
+    gap:15px;
+  }
+
+  .logo-container img{
+    height:30px;
+  }
+
+  .need{
+    font-size:14px;
+    margin-top:10px;
+  }
+
+  .whatsapp{
+    position: static;   
+    margin-top:10px;
+  }
+
+  .whatsapp img{
+    width:40px;
+  }
+
+}     
+@media screen and (max-width:1024px){
+
+.top-header{
+  flex-direction:row;     
+  flex-wrap:wrap;
+  gap:15px;
+  padding:15px 20px;
+}
+
+.progress-container{
+  width:100%;
+  position:static;
+  justify-content:center;
+  gap:10px;
+}
+
+
+.container{
+  display:flex;
+  flex-direction:row;   
+  padding:20px;
+  gap:20px;
+}
+
+
+.form-section{
+  width:60%;
+}
+
+
+.cart-summary{
+  width:40%;
+}
+
+
+.name-row{
+  display:flex;
+  gap:10px;
+}
+
+.name-row input{
+  width:100%;
+}
+
+
+#saveBtn{
+  width:100%;
+  margin-top:15px;
+}
+
+
+.circle{
+  width:28px;
+  height:28px;
+  font-size:14px;
+}
+
+
+.footer{
+  padding:25px 20px;
+  text-align:center;
+}
+
+.logo-container{
+  gap:15px;
+  justify-content:center;
+}
+
+.logo-container img{
+  height:32px;
+}
+
+.need{
+  font-size:15px;
+}
+
+.whatsapp{
+  position:fixed;  
+  right:20px;
+  bottom:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="top-header">
+
+<img src="fabindia.svg">
+
+<div class="progress-container">
+
+<div class="step">
+<div class="circle">1</div>
+<p>Cart</p>
+</div>
+
+<div class="line"></div>
+
+<div class="step">
+<div class="circle">2</div>
+<p>Address</p>
+</div>
+
+<div class="line"></div>
+
+<div class="step">
+<div class="circle">3</div>
+<p>Payment</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+
+
+<div class="form-section">
+
+<h3>Contact details</h3>
+
+<input type="text" id="mobile" placeholder="Your Mobile Number*" required>
+
+<div class="name-row">
+<input type="text" id="fname" placeholder="First name*" required>
+<input type="text" id="lname" placeholder="Last name">
+</div>
+
+<h3>Address</h3>
+
+<input type="text" id="address1" placeholder="Address Line 1*" required>
+<input type="text" id="address2" placeholder="Address line 2">
+
+<div class="name-row">
+<input type="text" id="pincode" placeholder="Pincode*" required>
+<input type="text" id="city" placeholder="City*" required>
+</div>
+
+<button type="button" id="saveBtn">Save Address</button>
+
+</div>
+
+
+
+
+<div class="cart-summary">
+
+<h4>CART DETAILS</h4>
+
+<div class="product">
+
+<img src="s1.avif">
+
+<div>
+Blue Cotton Short Kurta<br>
+Qty:1
+</div>
+
+</div>
+
+<hr>
+
+<h4>ORDER SUMMARY</h4>
+
+<div class="price-row">
+<span>Total MRP</span>
+<span>₹1,899</span>
+</div>
+
+<div class="price-row">
+<span>Discount</span>
+<span>-₹570</span>
+</div>
+
+<div class="price-row">
+<span>Delivery</span>
+<span>FREE</span>
+</div>
+
+<hr>
+
+<div class="price-row total">
+<span>Amount Payable</span>
+<span>₹1,329</span>
+</div>
+
+</div>
+
+</div>
+<div class="footer">
+
+  <div class="logo-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa">
+    <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="Mastercard">
+    <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="RuPay">
+    <img src="https://cdn-icons-png.flaticon.com/512/825/825454.png" alt="UPI">
+    <img src="https://cdn-icons-png.flaticon.com/512/6124/6124998.png" alt="GPay">
+  </div>
+
+  <p class="need">Need Help? Contact Us</p>
+
+  <div class="whatsapp">
+    <a href="#">
+      <img src="https://img.icons8.com/color/48/whatsapp.png">
+    </a>
+  </div>
+
+</div>
+<script>
+
+document.getElementById("saveBtn").addEventListener("click",function(){
+
+let mobile=document.getElementById("mobile").value;
+let fname=document.getElementById("fname").value;
+let lname=document.getElementById("lname").value;
+let address1=document.getElementById("address1").value;
+let address2=document.getElementById("address2").value;
+let pincode=document.getElementById("pincode").value;
+let city=document.getElementById("city").value;
+
+if(mobile && fname && address1 && pincode && city){
+
+let fullAddress=`
+
+${fname} ${lname}<br>
+${address1}<br>
+${address2}<br>
+${city} - ${pincode}<br>
+Mobile - ${mobile}
+
+`;
+
+localStorage.setItem("userAddress",fullAddress);
+
+window.location.href="address-select.html";
+
+}
+
+else{
+
+alert("Please fill all required fields");
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
