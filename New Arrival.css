@@ -120,7 +120,7 @@ cursor:pointer;
 .navbar{
 display:flex;
 justify-content:flex-start;
-gap:55px;
+gap:45px;
 padding:12px 85px;
 border-bottom:1px solid #eee;   
 background:#f6f6f6;

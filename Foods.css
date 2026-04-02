@@ -122,7 +122,7 @@ cursor:pointer;
 .navbar{
 display:flex;
 justify-content:flex-start;
-gap:55px;
+gap:45px;
 padding:12px 85px;
 border-bottom:1px solid #eee;   
 background:#f6f6f6;
@@ -408,10 +408,10 @@ right:-20px;
       gap: 16px;             
       margin: 20px;
       flex-wrap: wrap;  
-              /* Wrap if screen too small */
+             
     }
 
-    /* Buttons */
+  
     .button-container button {
       padding: 10px 24px;
       border-radius: 20px;
